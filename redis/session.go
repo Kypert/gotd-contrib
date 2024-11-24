@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"github.com/go-redis/redis/v8"
+	"github.com/redis/go-redis/v9"
 
 	"github.com/gotd/td/session"
 
@@ -16,7 +16,7 @@ type SessionStorage struct {
 }
 
 // NewSessionStorage creates new SessionStorage.
-func NewSessionStorage(client *redis.Client, key string) SessionStorage {
+func NewSessionStorage(client redis.Cmdable, key string) SessionStorage {
 	s := redisClient{client: client}
 	return SessionStorage{
 		Session: kv.NewSession(s, key),

@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/go-faster/errors"
-	"github.com/go-redis/redis/v8"
+	"github.com/redis/go-redis/v9"
 	"go.uber.org/multierr"
 
 	"github.com/gotd/contrib/storage"
@@ -94,9 +94,6 @@ func (s PeerStorage) add(ctx context.Context, associated []string, value storage
 	}
 
 	tx := s.redis.TxPipeline()
-	defer func() {
-		multierr.AppendInto(&rerr, tx.Close())
-	}()
 
 	if err := tx.Set(ctx, id, data, 0).Err(); err != nil {
 		return errors.Errorf("set id <-> data: %w", err)

@@ -4,13 +4,13 @@ import (
 	"context"
 
 	"github.com/go-faster/errors"
-	"github.com/go-redis/redis/v8"
+	"github.com/redis/go-redis/v9"
 
 	"github.com/gotd/contrib/auth/kv"
 )
 
 type redisClient struct {
-	client *redis.Client
+	client redis.Cmdable
 }
 
 func (r redisClient) Set(ctx context.Context, k, v string) error {

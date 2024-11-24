@@ -9,12 +9,12 @@ require (
 	github.com/gen2brain/dlgs v0.0.0-20211108104213-bade24837f0b
 	github.com/go-faster/errors v0.7.1
 	github.com/go-faster/jx v1.1.0
-	github.com/go-redis/redis/v8 v8.11.5
 	github.com/gotd/neo v0.1.5
 	github.com/gotd/td v0.102.0
 	github.com/hashicorp/vault/api v1.13.0
 	github.com/minio/minio-go/v7 v7.0.70
 	github.com/prometheus/client_golang v1.19.1
+	github.com/redis/go-redis/v9 v9.7.0
 	github.com/stretchr/testify v1.9.0
 	go.etcd.io/bbolt v1.3.10
 	go.opentelemetry.io/otel v1.28.0
@@ -91,4 +91,7 @@ replace (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible => github.com/form3tech-oss/jwt-go v3.2.2+incompatible
 	github.com/gogo/protobuf v1.3.1 => github.com/gogo/protobuf v1.3.2
 	github.com/gorilla/websocket v1.4.0 => github.com/gorilla/websocket v1.4.2
+
+	// See: gotd/td/issues/1427
+	nhooyr.io/websocket v1.8.11 => github.com/coder/websocket v1.8.11
 )

@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"github.com/go-redis/redis/v8"
+	"github.com/redis/go-redis/v9"
 
 	"github.com/gotd/contrib/auth/kv"
 )
@@ -12,7 +12,7 @@ type Credentials struct {
 }
 
 // NewCredentials creates new Credentials.
-func NewCredentials(client *redis.Client) Credentials {
+func NewCredentials(client redis.Cmdable) Credentials {
 	s := redisClient{
 		client: client,
 	}
